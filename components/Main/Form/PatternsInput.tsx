@@ -3,7 +3,7 @@ import { MainContext } from 'providers/Main.provider';
 import React, { ChangeEvent, useContext, useEffect, useState } from 'react'
 import TextInput from './TextInput';
 
-const PatternsInput = (props: {patternsNumber: number}) => {
+const PatternsInput = (props: { patternsNumber: number }) => {
     const { patternsNumber } = props
     const { patterns, setPatterns } = useContext(MainContext) as IMainContext
 
@@ -47,15 +47,15 @@ const PatternsInput = (props: {patternsNumber: number}) => {
 
     return (
         <>
-            {patterns.map((pattern, index) => {
-                return (<TextInput
+            {patterns.map((pattern, index) => (
+                <TextInput
                     htmlFor="pattern-input"
                     id="pattern-input"
                     rows={2}
                     title='Patrón'
                     value={pattern}
                     setValue={(newPattern) => changePattern(newPattern, index)} />)
-            })}
+            )}
         </>
     )
 }

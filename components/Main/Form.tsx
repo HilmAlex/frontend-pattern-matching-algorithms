@@ -6,7 +6,7 @@ import PatternsInput from "./Form/PatternsInput";
 import AlgorithmsInput from "./Form/AlgorithmInput";
 import { MainContext } from "providers/Main.provider";
 import PatternsInputNumber from "./Form/PatternsInputNumber";
-import { getOneByBruteForce } from "@services/Table.service";
+import { getOne } from "@services/Table.service";
 
 const defaultAlgorithms = [
     {
@@ -37,11 +37,23 @@ export const Form = (props: FormProps) => {
         setAlgorithmsToSearch(newAlgorithms)
     }
 
+    const getDataByPattern = (text: string, pattern: string, slugs: string[]) => {
+        const data: object[] = []
+
+        slugs.forEach(async (slug) => {
+            const currentData = await getOne(text, pattern, slug)
+            
+            data.push(currentData)
+        })
+
+        // Retorna el arreglo con la informacion de la ejecucion del algortimo con el texto y patron ingresado
+        return data
+    }
+
     const handleSubmit = (e: MouseEvent) => {
         e.preventDefault()
 
         const checkedAlgorithms = algorithmsToSearch.filter(algorithm => algorithm.isChecked)
-        console.log(patterns);
 
         if (!checkedAlgorithms.length) {
             alert("Seleccione un algoritmo")
@@ -49,20 +61,10 @@ export const Form = (props: FormProps) => {
         }
 
         const algorithmsSlug = checkedAlgorithms.map(algorithm => algorithm.slug)
-
-        const data = patterns.map((pattern) => {
-            let response = {};
-            getOneByBruteForce(text, pattern)
-                .then(res => {
-                    console.log(res);
-
-                    response = res
-                })
-
-            return response
-        })
-
-        algorithmsSlug.forEach(algorithm => console.log(algorithm))
+        
+        
+        const data = patterns.map( (pattern) => getDataByPattern(text, pattern, algorithmsSlug))
+        console.log("data", data);
 
         props.setData(data)
     }

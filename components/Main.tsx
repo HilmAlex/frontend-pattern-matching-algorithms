@@ -3,7 +3,7 @@ import { Form } from "@components/Main/Form";
 import { Table } from "@components/Main/Table";
 
 export const Main = () => {
-    const [data, setData] = useState<Array<Object>>([])
+    const [data, setData] = useState<Object[]>([])
 
     return (
         <main className="container " style={{minHeight: "85vh"}}>
