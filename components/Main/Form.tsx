@@ -1,4 +1,5 @@
-import { FormProps, IAlgorithmToSearch, IMainContext } from "config";
+/* eslint-disable react/jsx-key */
+import { FormProps, IAlgorithmToSearch, IMainContext, ITableData } from "config";
 import React, { MouseEvent, useContext, useState } from "react";
 import FileInput from "@components/Main/Form/FileInput";
 import TextInput from "@components/Main/Form/TextInput";
@@ -38,7 +39,7 @@ export const Form = (props: FormProps) => {
     }
 
     const getDataByPattern = (text: string, pattern: string, slugs: string[]) => {
-        const data: object[] = []
+        const data: ITableData[] = []
 
         slugs.forEach(async (slug) => {
             const currentData = await getOne(text, pattern, slug)
@@ -61,10 +62,7 @@ export const Form = (props: FormProps) => {
         }
 
         const algorithmsSlug = checkedAlgorithms.map(algorithm => algorithm.slug)
-        
-        
         const data = patterns.map( (pattern) => getDataByPattern(text, pattern, algorithmsSlug))
-        console.log("data", data);
 
         props.setData(data)
     }
@@ -95,7 +93,7 @@ export const Form = (props: FormProps) => {
                     return (<AlgorithmsInput
                         name={algorithm.name}
                         value={algorithm.isChecked}
-                        setValue={() => changeAlgorithmCheck(index)} algorithm='Fuerza bruta' />)
+                        setValue={() => changeAlgorithmCheck(index)}/>)
                 })}
             </div>
 

@@ -1,6 +1,7 @@
+import { IAlgorithmInput } from 'config'
 import React from 'react'
 
-const AlgorithmsInputs = (props) => {
+const AlgorithmsInputs = (props: IAlgorithmInput) => {
 
     const toggleChecked = () => {
         props.setValue(!props.value)

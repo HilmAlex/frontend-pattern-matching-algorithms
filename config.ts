@@ -2,14 +2,15 @@ import TextInput from "@components/Main/Form/TextInput";
 
 export const config = {
     env: {
-        API_URL: 'http://localhost:8081'
+        API_URL: 'https://backend-pattern-matching.herokuapp.com',
+        DEV_API_URL: 'http://localhost:8080'
     }
 }
 
 // Interfaces
 
 export interface FormProps {
-    setData: (data: Array<Object>) => void
+    setData: (data: ITableData[][]) => void
 }
 
 export interface TextInputProps {
@@ -30,9 +31,15 @@ export interface FileInputProps {
     setText: (value: string) => void,
 }
 
-export interface IAlgorithmToSearch {
-    slug: string;
+export interface IAlgorithmInput {
     name: string,
+    value: boolean;
+    setValue: (value: boolean) => void,
+}
+
+export interface IAlgorithmToSearch {
+    name: string;
+    slug: string,
     isChecked: boolean,
 }
 
