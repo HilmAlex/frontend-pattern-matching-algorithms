@@ -2,7 +2,7 @@
   "name": "frontend-pattern-matching-algorithms",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 8000",
+    "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
