@@ -1,6 +1,6 @@
 import { config } from "config";
 
-const url = `${config.env.DEV_API_URL}/api`;
+const url = `${config.env.API_URL}/api`;
 
 export const getOne = async (
   text: string,
