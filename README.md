@@ -9,7 +9,8 @@ Página Web para comparar el rendimiento de los Algoritmos de Coincidencia de Pa
 - Boyer Boore
 
 ## Requisitos
- - NodeJs y NPM o Yarn
+ - NodeJs
+ - NPM o Yarn
 
 ## Correr el servidor
 
