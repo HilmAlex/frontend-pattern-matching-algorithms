@@ -1,17 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FRONTEND PATTERN MATCHING ALGORITHMS
 
-## Getting Started
+## Web Page to Compare Performance Beetween Brute Force - KMP and Boyer Moore Algorihtms  |  DataStructures and Algorithms Project
 
-First, run the development server:
+Página Web para comparar el rendimiento de los Algoritmos de Coincidencia de Patrones:
+- Fuerza Bruta
+- KMP
+- Boyer Boore
+
+## Requisitos
+ - NodeJs y NPM o Yarn
+
+## Correr el servidor
 
 ```bash
-npm install
-npm run dev
-# or
-yarn
-yarn dev
+- npm install
+- npm run dev
+# O
+- yarn
+- yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir [http://localhost:3000](http://localhost:3000) en su navegador para ver los resultados.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Si no desea desplegar el servidor localmente, la página se encuentra desplegada en https://frontend-pattern-matching.herokuapp.com/
