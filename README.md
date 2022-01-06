@@ -1,6 +1,7 @@
 # FRONTEND PATTERN MATCHING ALGORITHMS
 
-## Web Page to Compare Performance Beetween Brute Force - KMP and Boyer Moore Algorihtms  |  DataStructures and Algorithms Project
+## Web Page to Compare Performance Beetween: Brute Force - KMP and Boyer Moore's Algorihtms
+### It is a project of the subject data structure and algorithms of the Escuela Politecnia Nacional, Ecuador
 
 Página Web para comparar el rendimiento de los Algoritmos de Coincidencia de Patrones:
 - Fuerza Bruta
